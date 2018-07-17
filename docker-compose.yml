@@ -1,9 +1,10 @@
 version: '2.3'
 services:
   notebook:
-    image: tensorflow/tensorflow:latest-gpu
+    build: ./tf-gpu-image
     runtime: nvidia
     ports:
       - '8888:8888'
+      - '6006:6006'
     volumes:
       - './notebooks:/notebooks'
